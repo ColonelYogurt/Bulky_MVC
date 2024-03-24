@@ -2,7 +2,6 @@
 
 <form method="post">
 
-    @* Unnesecery as name is Id. If it was categoryId or something else we would need this line. We weould need hidden as without it, it will create a new record and replace rather than update *@
     <input asp-for="Id" hidden/>
     <div class="border p-3 mt-4">
         <div class="row pb-2">
@@ -12,19 +11,17 @@
         @* <div asp-validation-summary="ModelOnly"></div> *@
         <div class="mb-3 row p-1">
             <label asp-for="Name" class="p-0"></label>
-            <input asp-for="Name" class="form-control" />
-            <span asp-validation-for="Name" class="text-danger"></span>
+            <input asp-for="Name" disabled class="form-control" />
         </div>
 
         <div class="mb-3 row p-1">
             <label asp-for="DisplayOrder" class="p-0"></label>
-            <input asp-for="DisplayOrder" class="form-control" />
-            <span asp-validation-for="DisplayOrder" class="text-danger"></span>
+            <input asp-for="DisplayOrder" disabled class="form-control" />
         </div>
 
         <div class="row">
             <div class="col-6 col-md-3">
-                <button type="submit" class="btn btn-primary form-control">Update</button>
+                <button type="submit" class="btn btn-danger form-control">Delete</button>
             </div>
             <div class="col-6 col-md-3">
                 <a asp-controller="Category" asp-action="Index" class="btn btn-outline-secondary form-control">
@@ -36,8 +33,3 @@
     </div>
 </form>
 
-@section Scripts {
-    @{
-        <partial name="_ValidationScriptsPartial" />
-    }
-}
